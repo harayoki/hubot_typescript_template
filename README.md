@@ -24,3 +24,5 @@ Then add **hubot-lot** to your `external-scripts.json`:
 user1>> hubot hello
 hubot>> hello!
 ```
+
+
