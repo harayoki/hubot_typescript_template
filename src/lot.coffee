@@ -15,13 +15,14 @@
 #   animalland <animalland@harayoki.net>
 
 module.exports = (robot) ->
-  robot.respond /hello/, (res) ->
-    res.reply "oops!"
-
-module.exports = (robot) ->
-  robot.hear /lot (.+)/, (msg) ->
+  robot.respond /lot (.+)/, (msg) ->
     items = msg.match[1].split(/[,\s]+/)
     item = msg.random items
-    msg.reply "#{item}かな"
+    msg.send "#{item}かな"
+
+  robot.respond /dare (.+)/, (msg) ->
+    items = msg.match[1].split(/[,\s]+/)
+    item = msg.random items
+    msg.send "@#{item}"
 
 
