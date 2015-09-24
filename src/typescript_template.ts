@@ -1,20 +1,10 @@
-/// <reference path="../typings/tsd.d.ts" />
+/// <reference path="hubot.d.ts" />
 
-interface IRobot {
-  respond(reg:RegExp, callback:Function):void;
-}
+var Main = function(robot:Robot) {
+  robot.respond(/hoge/, (message:Message):void => {
+    message.send('hoge hoge');
+  })
 
-interface IMessage  {
-  send(message:string):void;
-}
-
-var Main = function(robot:IRobot) {
-
-  var onMessage:Function = (mes:IMessage):void => {
-    mes.send('hoge hoge');
-  };
-
-  robot.respond(/hoge/, onMessage)
 }
 
 export = Main;

@@ -1,8 +1,7 @@
-/// <reference path="../typings/tsd.d.ts" />
+/// <reference path="hubot.d.ts" />
 var Main = function (robot) {
-    var onMessage = function (mes) {
-        mes.send('hoge hoge');
-    };
-    robot.respond(/hoge/, onMessage);
+    robot.respond(/hoge/, function (message) {
+        message.send('hoge hoge');
+    });
 };
 module.exports = Main;
