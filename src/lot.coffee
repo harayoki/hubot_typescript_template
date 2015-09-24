@@ -18,3 +18,10 @@ module.exports = (robot) ->
   robot.respond /hello/, (res) ->
     res.reply "oops!"
 
+module.exports = (robot) ->
+  robot.hear /lot (.+)/, (msg) ->
+    items = msg.match[1].split(/[,\s]+/)
+    item = msg.random items
+    msg.reply "#{item}かな"
+
+
