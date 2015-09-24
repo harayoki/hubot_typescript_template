@@ -16,7 +16,7 @@
 
 function BotMain(robot) {
   robot.respond(/hello/, function(res) {
-    msg.send('hello hello');
+    res.send('hello hello');
   });
 }
 module.exports = BotMain;
